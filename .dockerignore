@@ -1,0 +1,16 @@
+# Ignore the .git directory and its contents
+.git
+# Ignore cache files from Python
+__pycache__
+*.pyc
+# Ignore the node_modules directory often used in Node.js projects
+node_modules
+# Ignore all markdown files except the README.md
+*.md
+!README.md
+# Ignore temporary files
+tmp/
+# Ignore development/configuration files
+.env
+docker-compose.yml
+Dockerfile
