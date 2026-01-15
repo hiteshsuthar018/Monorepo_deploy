@@ -24,4 +24,4 @@ jobs:
                 context: .
                 file: ./docker/http.Dockerfile
                 push: true
-                tags: hitesh/http-backend/${{github.sha}}
+                tags: malakh000/http-backend:${{github.sha}}
