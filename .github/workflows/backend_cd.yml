@@ -25,3 +25,10 @@ jobs:
                 file: ./docker/http.Dockerfile
                 push: true
                 tags: malakh000/http-backend:${{github.sha}}
+
+            - name: Deploy to remote server
+              run: |
+                 echo "${{ secrets.SSH_PRIVATE_KEY }}" &> ~/ssh_key.pem
+                 chmod 700 ~/ssh_key.pem
+                 ssh -o StrictHostKeyChecking=no -i ~/ssh_key.pem ubuntu@65.1.248.46 -t "sudo docker stop user_backend && sudo docker run --name user_backend -d -p 8080:8080 malakh000/http-backend:${{ github.sha }}"
+

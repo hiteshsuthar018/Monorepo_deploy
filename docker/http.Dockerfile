@@ -6,6 +6,7 @@ COPY ./packages ./packages
 COPY ./bun.lock ./bun.lock
 COPY ./package.json ./package.json
 COPY ./apps/backend ./apps/backend
+COPY ./turbo.json ./turbo.json
 
 RUN bun install
 RUN bun run db:generate
